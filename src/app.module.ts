@@ -20,7 +20,7 @@ import { LocationController } from './location/location.controller';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot('mongodb+srv://harisbakhabarpk:7GJ9p6xebjgQgtjE@cluster0.ybov0y1.mongodb.net/',
+    MongooseModule.forRoot(process.env.MONGO_URL,
       { dbName: 'typescriptlearn' }),
     MongooseModule.forFeature([{ name: 'Student', schema: StudentSchema }, { name: 'User', schema: UserSchema }, { name: 'Post', schema: PostSchema }]),
     
